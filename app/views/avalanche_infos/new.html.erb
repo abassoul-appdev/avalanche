@@ -33,7 +33,7 @@
           Skier
         </label>
 
-        <input type="text" id="skier_id" name="skier_id" placeholder="Skier" class="form-control" value="<%= @avalanche_info.skier_id %>">
+        <%= select_tag(:skier_id, options_from_collection_for_select(Skier.all, :id, :email, @avalanche_info.skier_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for name -->
