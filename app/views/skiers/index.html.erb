@@ -1,0 +1,36 @@
+<div class="page-header">
+  <h1>
+    Skiers
+    <a href="/skiers/new" class="btn btn-lg btn-success">New Skier</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Name</th>
+        <th>Dob</th>
+        <th>Home mountain</th>
+        <th>Ski level</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @skiers.each do |skier| %>
+      <tr>
+        <td><%= skier.email %></td>
+        <td><%= skier.password %></td>
+        <td><%= skier.name %></td>
+        <td><%= skier.dob %></td>
+        <td><%= skier.home_mountain %></td>
+        <td><%= skier.ski_level %></td>
+        <td>
+          <a href="/skiers/<%= skier.id %>" class="btn btn-primary">Show</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
