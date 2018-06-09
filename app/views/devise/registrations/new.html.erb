@@ -36,6 +36,34 @@
         </div>
 
         <div class="form-group">
+            <%= f.label :name, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :name, :class => "form-control", :placeholder => "Enter name" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :dob, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.date_select :dob, class: "col-sm-2 control-label" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :home_mountain, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.text_field :home_mountain, :class => "form-control", :placeholder => "Enter home mountain" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :ski_level, class: "col-sm-2 control-label" %>
+            <div class="col-sm-10">
+              <%= f.number_field :ski_level, :class => "form-control", :placeholder => "Enter ski level" %>
+            </div>
+          </div>
+
+          <div class="form-group">
           <div class="col-sm-10 col-sm-offset-2">
             <%= f.submit "Sign up", class: "btn btn-success btn-block" %>
           </div>
