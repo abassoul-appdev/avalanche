@@ -27,14 +27,8 @@
         <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @avalanche_info.location %>">
       </div>
 
-      <!-- Label and input for skier_id -->
-      <div class="form-group">
-        <label for="skier_id" class="control-label">
-          Skier
-        </label>
-
-        <%= select_tag(:skier_id, options_from_collection_for_select(Skier.all, :id, :email, @avalanche_info.skier_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for name -->
       <div class="form-group">

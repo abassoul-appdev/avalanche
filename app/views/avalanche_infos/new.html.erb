@@ -28,13 +28,7 @@
       </div>
 
       <!-- Label and input for skier_id -->
-      <div class="form-group">
-        <label for="skier_id" class="control-label">
-          Skier
-        </label>
-
-        <%= select_tag(:skier_id, options_from_collection_for_select(Skier.all, :id, :email, @avalanche_info.skier_id), :class => "form-control") %>
-      </div>
+      <input type="hidden" name="skier_id" value="<%= current_skier.id %>">
 
       <!-- Label and input for name -->
       <div class="form-group">
