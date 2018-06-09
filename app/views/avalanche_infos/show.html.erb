@@ -13,7 +13,13 @@
       </dd>
 
       <dt>Skier</dt>
-      <dd><%= @avalanche_info.skier_id %></dd>
+      <dd>
+        <% if @avalanche_info.skier.present? %>
+          <a href="/skiers/<%= @avalanche_info.skier_id %>">
+            <%= @avalanche_info.skier.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Name</dt>
       <dd><%= @avalanche_info.name %></dd>

@@ -19,7 +19,13 @@
       <% @avalanche_infos.each do |avalanche_info| %>
       <tr>
         <td><%= avalanche_info.location %></td>
-        <td><%= avalanche_info.skier.email %></td>
+        <td>
+          <% if avalanche_info.skier.present? %>
+            <a href="/skiers/<%= avalanche_info.skier.id %>">
+              <%= avalanche_info.skier.email %>
+            </a>
+          <% end %>
+        </td>
         <td><%= avalanche_info.name %></td>
         <td><%= avalanche_info.details %></td>
         <td>
