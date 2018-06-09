@@ -49,3 +49,4 @@ gem 'font-awesome-sass', '~> 4.5.0'
 gem 'activeadmin', '1.2.1'
 gem 'gmaps4rails'
 gem 'underscore-rails'
+gem "rollbar"
