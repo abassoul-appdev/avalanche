@@ -1,4 +1,6 @@
 ActiveAdmin.register Skier do
+
+ permit_params :email, :password, :name, :dob, :home_mountain, :ski_level
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
