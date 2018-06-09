@@ -11,6 +11,11 @@ class AvalancheInfosController < ApplicationController
 
   def index
     @avalanche_infos = AvalancheInfo.all
+    @location_hash = Gmaps4rails.build_markers(@avalanche_infos.where.not(:location_latitude => nil)) do |avalanche_info, marker|
+      marker.lat avalanche_info.location_latitude
+      marker.lng avalanche_info.location_longitude
+      marker.infowindow "<h5><a href='/avalanche_infos/#{avalanche_info.id}'>#{avalanche_info.created_at}</a></h5><small>#{avalanche_info.location_formatted_address}</small>"
+    end
 
     render("avalanche_infos/index.html.erb")
   end
