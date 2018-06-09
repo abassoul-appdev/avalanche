@@ -1,6 +1,9 @@
 class Skier < ApplicationRecord
   # Direct associations
 
+  has_many   :avalanche_infos,
+             :dependent => :nullify
+
   # Indirect associations
 
   # Validations
