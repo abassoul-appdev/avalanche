@@ -1,4 +1,6 @@
 ActiveAdmin.register AvalancheInfo do
+
+ permit_params :location, :skier_id, :name, :details
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
