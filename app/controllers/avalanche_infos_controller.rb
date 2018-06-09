@@ -10,7 +10,8 @@ class AvalancheInfosController < ApplicationController
   end
 
   def index
-    @avalanche_infos = AvalancheInfo.page(params[:page]).per(10)
+    @q = AvalancheInfo.ransack(params[:q])
+    @avalanche_infos = @q.result(:distinct => true).includes(:skier).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@avalanche_infos.where.not(:location_latitude => nil)) do |avalanche_info, marker|
       marker.lat avalanche_info.location_latitude
       marker.lng avalanche_info.location_longitude
