@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @avalanche_info.errors.any? %>
+  <% @avalanche_info.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Avalanche Info #<%= @avalanche_info.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_avalanche_info/<%= @avalanche_info.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for location -->
+      <div class="form-group">
+        <label for="location" class="control-label">
+          Location
+        </label>
+
+        <input type="text" id="location" name="location" placeholder="Location" class="form-control" value="<%= @avalanche_info.location %>">
+      </div>
+
+      <!-- Label and input for skier_id -->
+      <div class="form-group">
+        <label for="skier_id" class="control-label">
+          Skier
+        </label>
+
+        <input type="text" id="skier_id" name="skier_id" placeholder="Skier" class="form-control" value="<%= @avalanche_info.skier_id %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @avalanche_info.name %>">
+      </div>
+
+      <!-- Label and input for details -->
+      <div class="form-group">
+        <label for="details" class="control-label">
+          Details
+        </label>
+
+        <input type="text" id="details" name="details" placeholder="Details" class="form-control" value="<%= @avalanche_info.details %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Avalanche Info
+      </button>
+      or
+      <a href="/avalanche_infos/<%= @avalanche_info.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

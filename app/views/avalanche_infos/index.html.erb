@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Avalanche infos
+    <a href="/avalanche_infos/new" class="btn btn-lg btn-success">New Avalanche info</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Location</th>
+        <th>Skier</th>
+        <th>Name</th>
+        <th>Details</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @avalanche_infos.each do |avalanche_info| %>
+      <tr>
+        <td><%= avalanche_info.location %></td>
+        <td><%= avalanche_info.skier_id %></td>
+        <td><%= avalanche_info.name %></td>
+        <td><%= avalanche_info.details %></td>
+        <td>
+          <a href="/avalanche_infos/<%= avalanche_info.id %>" class="btn btn-primary">Show</a>
+          <a href="/avalanche_infos/<%= avalanche_info.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_avalanche_info/<%= avalanche_info.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
