@@ -24,8 +24,11 @@
         <td><%= avalanche_info.details %></td>
         <td>
           <a href="/avalanche_infos/<%= avalanche_info.id %>" class="btn btn-primary">Show</a>
-          <a href="/avalanche_infos/<%= avalanche_info.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_avalanche_info/<%= avalanche_info.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_skier == avalanche_info.skier %>
+            <a href="/avalanche_infos/<%= avalanche_info.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_avalanche_info/<%= avalanche_info.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

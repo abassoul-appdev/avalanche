@@ -51,12 +51,14 @@
             <a href="/avalanche_infos/<%= avalanche_info.id %>" class="btn btn-primary">
               <i class="fa fa-search-plus"></i>
             </a>
-            <a href="/avalanche_infos/<%= avalanche_info.id %>/edit" class="btn btn-warning">
-              <i class="fa fa-edit"></i>
-            </a>
-            <a href="/delete_avalanche_info/<%= avalanche_info.id %>" class="btn btn-danger" rel="nofollow">
-              <i class="fa fa-trash-o"></i>
-            </a>
+            <%if current_skier == avalanche_info.skier %>
+              <a href="/avalanche_infos/<%= avalanche_info.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+              <a href="/delete_avalanche_info/<%= avalanche_info.id %>" class="btn btn-danger" rel="nofollow">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            <% end %>
           </div>
         </li>
       <% end %>

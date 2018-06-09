@@ -1,4 +1,14 @@
 class AvalancheInfosController < ApplicationController
+  before_action :current_skier_must_be_avalanche_info_skier, :only => [:edit, :update, :destroy]
+
+  def current_skier_must_be_avalanche_info_skier
+    avalanche_info = AvalancheInfo.find(params[:id])
+
+    unless current_skier == avalanche_info.skier
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @avalanche_infos = AvalancheInfo.all
 
