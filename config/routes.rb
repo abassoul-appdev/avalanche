@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "avalanche_infos#index"
   # Routes for the Avalanche_info resource:
   # CREATE
   get "/avalanche_infos/new", :controller => "avalanche_infos", :action => "new"
